@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ab 'No' Press Karke Dikhao</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .center-box {
+            text-align: center;
+        }
+        .center-thirdimage {
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        #no-button {
+            position: relative;
+        }
+    </style>
 </head>
 <body>
     <div class="center-box">
@@ -15,6 +44,7 @@
     </div>
     <script>
         const noButton = document.getElementById('no-button');
+
         function moveButton() {
             const buttonWidth = noButton.offsetWidth;
             const buttonHeight = noButton.offsetHeight;
@@ -27,7 +57,10 @@
             noButton.style.left = `${randomX}px`;
             noButton.style.top = `${randomY}px`;
         }
-        noButton.addEventListener('mouseover', moveButton);
+
+        // Add event listeners for both desktop and mobile
+        noButton.addEventListener('mouseover', moveButton); // Desktop
+        noButton.addEventListener('touchstart', moveButton); // Mobile
     </script>
 </body>
 </html>
