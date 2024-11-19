@@ -1,0 +1,11 @@
+The website should containt the following functions :
+1. It should consist 4 pages : Registration page, first page, second page, third page and final page.
+2. Registration page should contain a box for asking the name of the person who enters the website, and the name with time should come to me using a python file.
+3. Firstly it should open the first page where in the center there should be two options "Yes" and "No" with a question "I love you, Do you love me".
+4. Secondly, if anyone clicks the "Yes" button they should directly redirect to the final page where a small and cute message whould be displayed.
+5. If the user clicks the "No: button it should redirect to the second page where it must be written "Think again, itni jald bazzi mt kro" and again two options "Ok, I love you too" and other one as "No, I've thought twice, I don't Love You".
+6. If the user clicks the  "Ok, I love you too" button the redirect them to the final page.
+7. Else redirect them to the third page where again it should display "Ab 'No' press krke dikhao" and should again have two options "Chalo thik hai, I love you too" and other "No".
+8. If the user clicks on the "Chalo thik hai, I love you too"  button redirect them on the final page.
+9. Else if they click on the other option, make the option move here and there at random places.
+10. Conclusion for last page is that, the user willn't bw able to click the "No" option and at last he/she needs to click the "I love you too button".

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ab 'No' Press Karke Dikhao</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="center-box">
+        <img src="assets/thirdpage.jpg" alt="Heart" class="center-thirdimage">
+        <h2>Ab reject krke dikhao 😎</h2>
+        <button onclick="location.href='final-page.html'">Chalo thik hai, I love you too</button>
+        <button id="no-button">I reject you!!!</button>
+    </div>
+    <script>
+        const noButton = document.getElementById('no-button');
+        function moveButton() {
+            const buttonWidth = noButton.offsetWidth;
+            const buttonHeight = noButton.offsetHeight;
+            const maxX = window.innerWidth - buttonWidth;
+            const maxY = window.innerHeight - buttonHeight;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        }
+        noButton.addEventListener('mouseover', moveButton);
+    </script>
+</body>
+</html>

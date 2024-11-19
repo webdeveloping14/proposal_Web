@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="center-box">
+        <img src="assets/regis.jpeg" alt="Heart" class="center-image">
+        <form id="registration-form">
+            <input type="text" id="user-name" placeholder="Enter Your Name" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('user-name').value;
+
+            fetch('http://localhost:5000/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: name, time: new Date().toISOString() })
+            });
+
+            window.location.href = "first-page.html";
+        });
+    </script>
+</body>
+</html>

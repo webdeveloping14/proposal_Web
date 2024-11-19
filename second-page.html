@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Think Again</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="background-audio" autoplay>
+        <source src="assets/audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="center-box">
+        <img src="assets/second-page.jpg" alt="Heart" class="center-image">
+        <h2>Think again, itni jald bazzi mt kro</h2>
+        <button onclick="location.href='final-page.html'">Ok, I love you too</button>
+        <button onclick="location.href='third-page.html'">No, I've thought twice, I don't Love You</button>
+    </div>
+    <script>
+        const audio = document.getElementById('background-audio');
+        audio.addEventListener('ended', () => {
+            audio.remove(); // Remove the audio element after playback finishes
+        });
+    </script>
+</body>
+</html>
