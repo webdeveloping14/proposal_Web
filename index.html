@@ -10,30 +10,15 @@
     <div class="center-box">
         <img src="assets/regis.jpeg" alt="Heart" class="center-image">
         <form id="registration-form" name="registration" method="POST" data-netlify="true">
+            <!-- Hidden input for Netlify form handling -->
             <input type="hidden" name="form-name" value="registration">
+            
+            <!-- Input for user name -->
             <input type="text" name="name" id="user-name" placeholder="Enter Your Name" required>
+            
+            <!-- Submit button -->
             <button type="submit">Submit</button>
         </form>
     </div>
-    <script>
-        document.getElementById('registration-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('user-name').value;
-            fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams({
-                    'form-name': 'registration',
-                    'name': name,
-                })
-            }).then(() => {
-                alert('Form submitted successfully!');
-                window.location.href = "first-page.html";
-            }).catch((err) => {
-                console.error(err);
-                alert('Submission failed!');
-            });
-        });
-    </script>
 </body>
 </html>
