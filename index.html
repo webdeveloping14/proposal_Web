@@ -20,5 +20,26 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission behavior
+
+            // Manually submit the form data using Netlify's form handling
+            const form = e.target;
+            const formData = new FormData(form);
+
+            fetch("/", {
+                method: "POST",
+                body: formData
+            })
+            .then(() => {
+                // Redirect to the desired page after successful submission
+                window.location.href = "first-page.html";
+            })
+            .catch(error => {
+                console.error("Error submitting the form:", error);
+            });
+        });
+    </script>
 </body>
 </html>
