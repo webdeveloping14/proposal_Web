@@ -9,8 +9,9 @@
 <body>
     <div class="center-box">
         <img src="assets/regis.jpeg" alt="Heart" class="center-image">
-        <form id="registration-form">
-            <input type="text" id="user-name" placeholder="Enter Your Name" required>
+        <form id="registration-form" name="registration" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="registration">
+            <input type="text" name="name" id="user-name" placeholder="Enter Your Name" required>
             <button type="submit">Submit</button>
         </form>
     </div>
@@ -18,12 +19,20 @@
         document.getElementById('registration-form').addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.getElementById('user-name').value;
-            fetch('http://localhost:5000/register', {
+            fetch('/', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: name, time: new Date().toISOString() })
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    'form-name': 'registration',
+                    'name': name,
+                })
+            }).then(() => {
+                alert('Form submitted successfully!');
+                window.location.href = "first-page.html";
+            }).catch((err) => {
+                console.error(err);
+                alert('Submission failed!');
             });
-            window.location.href = "first-page.html";
         });
     </script>
 </body>
